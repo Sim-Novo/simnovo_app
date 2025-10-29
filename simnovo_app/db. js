@@ -1,0 +1,22 @@
+// db.js - MySQL connection setup
+
+import mysql from "mysql2";
+
+// create a connection to your MySQL database
+const connection = mysql.createConnection({
+  host: "localhost",      // your database host
+  user: "root",           // your MySQL username
+  password: "",           // your MySQL password (leave empty if none)
+  database: "simnovo_app" // your database name
+});
+
+// connect and check if it works
+connection.connect((err) => {
+  if (err) {
+    console.error("❌ Error connecting to MySQL:", err);
+  } else {
+    console.log("✅ Connected to MySQL!");
+  }
+});
+
+export default connection;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin-upload">Admin Upload</a>
+    <a href="/about">About</a>
+</nav>
+  <meta charset="UTF-8">
+  <title>SimNovo Prototype</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin-upload">Admin Upload</a>
+    <a href="/about">About</a>
+</nav>
+<body>
+  <header>
+    <h1>Welcome to SimNovo Tech</h1>
+  </header>
+
+  <main>
+    <p>This is the prototype homepage for your client.</p>
+    <a href="/about">Go to About Page</a>
+  </main>
+
+<footer>
+  <p>&copy; 2025 SimNovo Tech | <span id="datetime"></span></p>
+<footer>
+  <p>&copy; 2025 SimNovo Tech | <span id="datetime"></span></p>
+</footer>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const datetimeSpan = document.getElementById('datetime');
+    datetimeSpan.textContent = now.toLocaleString();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>

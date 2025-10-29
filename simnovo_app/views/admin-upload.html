@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Upload - SimNovo</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Upload</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin-upload">Admin Upload</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <main>
+    <p>This is a prototype for Admin Upload.</p>
+    <form>
+      <label>Choose file: <input type="file" name="file"></label><br><br>
+      <button type="submit">Upload</button>
+    </form>
+  </main>
+
+<footer>
+  <p>&copy; 2025 SimNovo Tech | <span id="datetime"></span></p>
+</footer>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const datetimeSpan = document.getElementById('datetime');
+    datetimeSpan.textContent = now.toLocaleString();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>

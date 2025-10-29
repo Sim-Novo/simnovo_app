@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Upload - SimNovo</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Upload</h1>
+  </header>
+
+  <main>
+  <p>This is a prototype for Admin Upload.</p>
+  <form id="uploadForm">
+    <label>Choose file: <input type="file" id="fileInput" name="file"></label><br><br>
+    <button type="submit">Upload</button>
+  </form>
+  <p id="uploadMessage" style="color:green; font-weight:bold;"></p>
+</main>
+
+<script>
+  const form = document.getElementById('uploadForm');
+  const message = document.getElementById('uploadMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent actual form submission
+    const fileInput = document.getElementById('fileInput');
+    if(fileInput.files.length > 0){
+      message.textContent = `File "${fileInput.files[0].name}" uploaded successfully!`;
+    } else {
+      message.textContent = 'Please select a file to upload.';
+      message.style.color = 'red';
+    }
+    // Clear file input
+    fileInput.value = '';
+  });
+</script>
+<footer>
+  <p>&copy; 2025 SimNovo Tech | <span id="datetime"></span></p>
+</footer>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const datetimeSpan = document.getElementById('datetime');
+    datetimeSpan.textContent = now.toLocaleString();
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+</script>
